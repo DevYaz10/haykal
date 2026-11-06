@@ -61,11 +61,9 @@
       cmp.style.setProperty("--split", v + "%");
       if (knobLabel) knobLabel.setAttribute("aria-valuetext", v + "٪");
     }
-    paint(parseFloat(range ? range.value : 46));
+    paint(parseFloat(range ? range.value : 54));
     if (range) {
       range.addEventListener("input", function () { paint(parseFloat(range.value)); });
-      var start = parseFloat(range.value);
-      range.addEventListener("pointerdown", function () { start = parseFloat(range.value); });
       range.addEventListener("keydown", function (e) {
         // فتح/إغلاق كامل بلوحة المفاتيح
         if (e.key === "Home") { range.value = 0; paint(0); }
@@ -75,7 +73,7 @@
       cmp.addEventListener("click", function (e) {
         if (e.target === range || e.target.closest(".compare__range")) return;
         var r = cmp.getBoundingClientRect();
-        var pct = ((r.right - e.clientX) / r.width) * 100;
+        var pct = ((e.clientX - r.left) / r.width) * 100;
         pct = Math.max(0, Math.min(100, pct));
         range.value = pct;
         paint(pct);

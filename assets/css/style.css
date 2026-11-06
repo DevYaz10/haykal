@@ -576,7 +576,9 @@ p:last-child { margin-bottom: 0; }
 
 /* ---------- 6. أداة المقارنة: الزخرفة ← الهيكل ---------- */
 .compare {
-  --split: 46%;
+  /* --split = المسافة من الحافة اليسرى إلى الفاصل (بالبكسل الفعلي، لا المنطقي)
+     حتى يتبع الفاصل المؤشر ١:١ أثناء السحب */
+  --split: 54%;
   position: relative;
   aspect-ratio: 10 / 9;
   background: var(--ink-2);
@@ -604,7 +606,7 @@ p:last-child { margin-bottom: 0; }
 
 /* طبقة الزخرفة: تُقصّ من جهة البداية (اليمين) بحسب --split */
 .compare__layer--orn {
-  clip-path: inset(0 0 0 calc(100% - var(--split)));
+  clip-path: inset(0 0 0 var(--split));
   z-index: 2;
 }
 
@@ -612,7 +614,7 @@ p:last-child { margin-bottom: 0; }
   position: absolute;
   top: 0;
   bottom: 0;
-  right: var(--split);
+  left: var(--split);
   width: 1px;
   background: rgba(240, 234, 220, .55);
   z-index: 4;
