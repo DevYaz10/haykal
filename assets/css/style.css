@@ -1398,9 +1398,9 @@ p:last-child { margin-bottom: 0; }
 
 .site-footer .brand__name { color: var(--sand-50); }
 .footer__tag {
-  font-family: var(--f-display);
-  font-weight: 500;
-  font-size: clamp(18px, 1.7vw, 23px);
+  font-family: "Amiri", serif;
+  font-weight: 700;
+  font-size: clamp(20px, 1.9vw, 26px);
   color: var(--sand-100);
   margin: 20px 0 10px;
   line-height: 1.5;
