@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="هيكل">
+  <title>هيكل — HAYKAL</title>
+  <!-- مربعان متساويان: أحدهما أُدير ٤٥°، فتولدت النجمة الثمانية -->
+  <path d="M24 3 L45 24 L24 45 L3 24 Z" fill="#A4552C" fill-opacity=".14" stroke="#A4552C" stroke-width="2.4"/>
+  <path d="M10 10 L38 10 L38 38 L10 38 Z" fill="none" stroke="#16130F" stroke-width="2.4"/>
+</svg>

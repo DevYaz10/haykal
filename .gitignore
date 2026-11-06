@@ -1,0 +1,15 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+
+# Local dev servers / tooling
+.venv/
+node_modules/
+.vscode/
+.idea/
+*.log
+
+# Scratch
+_notes/

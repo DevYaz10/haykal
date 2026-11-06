@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="هيكل">
+  <title>هيكل</title>
+  <rect width="32" height="32" rx="3" fill="#A4552C"/>
+  <path d="M16 4 L28 16 L16 28 L4 16 Z" fill="#16130F" fill-opacity=".14" stroke="#16130F" stroke-width="2"/>
+  <path d="M8.5 8.5 L23.5 8.5 L23.5 23.5 L8.5 23.5 Z" fill="none" stroke="#16130F" stroke-width="2"/>
+</svg>

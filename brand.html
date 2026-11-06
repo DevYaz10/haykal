@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>هيكل — ورقة الهوية</title>
+<meta name="description" content="ورقة هوية هيكل: الاسم، الشعار، منظومة الزخرفة، اللوحة اللونية، الخطوط، وقواعد الاستخدام.">
+<meta name="theme-color" content="#16130F">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Noto+Kufi+Arabic:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  /* ورقة الهوية */
+  .bs-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+  .bs-back { font-size: 13.5px; font-weight: 500; display: inline-flex; gap: 8px; align-items: center; }
+  .bs-back:hover { color: var(--clay); }
+
+  .bs-hero { background: var(--ink); color: var(--sand-100); padding-block: clamp(56px, 7vw, 108px); }
+  .bs-hero__mark { width: clamp(88px, 12vw, 132px); color: var(--clay-soft); margin-bottom: clamp(20px, 2.6vw, 30px); }
+  .bs-hero__mark svg { display: block; width: 100%; height: auto; }
+  .bs-hero__name { font-family: var(--f-display); font-weight: 800; font-size: clamp(62px, 12vw, 158px); line-height: .95; color: var(--sand-50); }
+  .bs-hero__latin { font-family: var(--f-mono); font-size: clamp(11px, 1.1vw, 14px); letter-spacing: .5em; color: var(--clay-soft); margin-top: 16px; direction: ltr; }
+  .bs-hero__tag { font-family: "Amiri", serif; font-weight: 700; font-size: clamp(22px, 2.4vw, 34px); color: var(--sand-200); margin-top: clamp(22px, 2.6vw, 34px); }
+
+  .bs-sec { padding-block: clamp(44px, 5vw, 76px); border-top: 1px solid var(--line); }
+  .bs-h { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--clay); margin-bottom: 14px; direction: ltr; display: flex; align-items: center; gap: 8px; }
+  .bs-h::before { content: ""; width: 10px; height: 10px; background: url("assets/img/orn-star.svg") no-repeat center / contain; }
+  .bs-sec h2 { font-size: clamp(23px, 2.6vw, 34px); margin-bottom: 18px; }
+  .bs-sec > .wrap > p, .bs-p { color: var(--muted); max-width: 66ch; }
+  .bs-grid2 { display: grid; gap: clamp(18px, 2.4vw, 36px); margin-top: 30px; }
+  @media (min-width: 820px) { .bs-grid2 { grid-template-columns: 1fr 1fr; } }
+  .bs-card { border: 1px solid var(--line); padding: clamp(18px, 2.4vw, 28px); background: var(--sand-100); }
+  .bs-card--ink { background: var(--ink); border-color: var(--ink-3); color: var(--sand-100); }
+  .bs-card__k { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--clay); display: block; margin-bottom: 16px; }
+  .bs-card--ink .bs-card__k { color: var(--clay-soft); }
+
+  .bs-lockup { display: flex; align-items: center; gap: 14px; }
+  .bs-lockup__mark { width: 44px; color: var(--clay); }
+  .bs-lockup--ink .bs-lockup__mark { color: var(--clay-soft); }
+  .bs-lockup__mark svg { display: block; width: 100%; height: auto; }
+  .bs-lockup__name { font-family: var(--f-display); font-weight: 800; font-size: 30px; line-height: 1; }
+  .bs-lockup--ink .bs-lockup__name { color: var(--sand-50); }
+  .bs-lockup__lat { font-family: var(--f-mono); font-size: 8.5px; letter-spacing: .3em; opacity: .6; display: block; margin-top: 5px; }
+  .bs-stack { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+
+  .bs-sizes { display: flex; align-items: flex-end; gap: clamp(22px, 4vw, 48px); flex-wrap: wrap; margin-top: 26px; }
+  .bs-size { text-align: center; }
+  .bs-size__mark { color: var(--clay); margin-bottom: 10px; }
+  .bs-size__mark svg { display: block; width: 100%; height: auto; }
+  .bs-size span { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .1em; color: var(--muted-2); }
+
+  /* منظومة الزخرفة */
+  .motifs { display: grid; gap: 16px; margin-top: 28px; }
+  @media (min-width: 780px) { .motifs { grid-template-columns: repeat(3, 1fr); } }
+  .motif { border: 1px solid var(--line); background: var(--sand-100); }
+  .motif__tile { height: 132px; border-bottom: 1px solid var(--line); }
+  .motif__tile--lat { background: url("assets/img/orn-lattice.svg") repeat center / 48px 48px; }
+  .motif__tile--frz { background: url("assets/img/orn-frieze.svg") repeat-x center center / 120px 26px; background-color: var(--sand-50); }
+  .motif__tile--str { background: url("assets/img/orn-star.svg") repeat center / 26px 26px; background-color: var(--sand-50); }
+  .motif__body { padding: 14px 16px 16px; }
+  .motif__name { font-size: 15px; font-weight: 700; display: block; margin-bottom: 4px; }
+  .motif__use { font-size: 13px; color: var(--muted); line-height: 1.7; }
+  .motif__k { font-family: var(--f-mono); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--clay); }
+
+  .swatches { display: grid; gap: 14px; margin-top: 26px; }
+  @media (min-width: 620px) { .swatches { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .swatches { grid-template-columns: repeat(3, 1fr); } }
+  .sw { border: 1px solid var(--line); }
+  .sw__chip { height: 84px; }
+  .sw__body { padding: 12px 14px 14px; background: var(--sand-100); }
+  .sw__name { font-size: 14.5px; font-weight: 600; display: flex; justify-content: space-between; gap: 10px; }
+  .sw__hex { font-family: var(--f-mono); font-size: 11px; color: var(--muted-2); letter-spacing: .06em; }
+  .sw__use { font-size: 12.5px; color: var(--muted); line-height: 1.7; margin-top: 6px; }
+  .sw__ratio { font-family: var(--f-mono); font-size: 10px; letter-spacing: .06em; color: var(--clay); margin-top: 6px; display: block; }
+
+  .spec { border-top: 1px solid var(--line); padding-block: 24px; display: grid; gap: 16px; }
+  @media (min-width: 800px) { .spec { grid-template-columns: 220px 1fr; } }
+  .spec__meta { font-family: var(--f-mono); font-size: 10px; letter-spacing: .14em; color: var(--muted-2); text-transform: uppercase; line-height: 2; }
+  .spec__meta b { color: var(--clay); font-weight: 500; display: block; font-size: 11px; }
+  .spec__sample--display { font-family: var(--f-display); font-weight: 800; font-size: clamp(28px, 4vw, 46px); line-height: 1.4; }
+  .spec__sample--naskh { font-family: "Amiri", serif; font-weight: 700; font-size: clamp(26px, 3.4vw, 40px); line-height: 1.5; }
+  .spec__sample--body { font-family: var(--f-body); font-size: 16.5px; line-height: 1.95; color: var(--ink-2); max-width: 58ch; }
+  .spec__sample--mono { font-family: var(--f-mono); font-size: 13px; letter-spacing: .1em; direction: ltr; text-align: left; color: var(--muted); }
+
+  .rules { display: grid; gap: 14px; margin-top: 26px; }
+  @media (min-width: 760px) { .rules { grid-template-columns: 1fr 1fr; } }
+  .rules__list { list-style: none; margin: 0; padding: 0; border: 1px solid var(--line); background: var(--sand-100); }
+  .rules__h { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase; padding: 12px 16px; border-bottom: 1px solid var(--line); color: var(--clay); }
+  .rules--no .rules__h { color: var(--muted-2); }
+  .rules__list li:not(.rules__h) { padding: 11px 16px; border-bottom: 1px solid var(--line-soft); font-size: 14px; line-height: 1.75; display: flex; gap: 10px; }
+  .rules__list li:last-child { border-bottom: 0; }
+  .rules--yes li:not(.rules__h)::before { content: "✓"; color: var(--clay); flex: 0 0 auto; font-size: 13px; }
+  .rules--no li:not(.rules__h)::before { content: "✕"; color: var(--muted-2); flex: 0 0 auto; font-size: 12px; }
+
+  .bs-foot { border-top: 1px solid var(--line); padding-block: 30px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .1em; color: var(--muted-2); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="bs-top">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" role="presentation">
+          <path d="M24 3 L45 24 L24 45 L3 24 Z" fill="currentColor" fill-opacity=".16" stroke="currentColor" stroke-width="2.6"/>
+          <rect x="10" y="10" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.6"/>
+        </svg>
+      </span>
+      <span><span class="brand__name">هيكل</span><span class="brand__latin">HAYKAL</span></span>
+    </a>
+    <a class="bs-back" href="index.html"><span class="btn__arrow">←</span> رجوع إلى الموقع</a>
+  </div>
+</div>
+
+<section class="bs-hero">
+  <div class="wrap">
+    <div class="bs-hero__mark" aria-hidden="true">
+      <svg viewBox="0 0 48 48" role="presentation">
+        <path d="M24 3 L45 24 L24 45 L3 24 Z" fill="currentColor" fill-opacity=".16" stroke="currentColor" stroke-width="2.4"/>
+        <rect x="10" y="10" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      </svg>
+    </div>
+    <h1 class="bs-hero__name">هيكل</h1>
+    <div class="bs-hero__latin">H A Y K A L</div>
+    <p class="bs-hero__tag">التراث كما يعمل.</p>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- 01 الاسم -->
+  <section class="bs-sec">
+    <span class="bs-h">01 — Naming</span>
+    <h2>لماذا «هيكل»</h2>
+    <p class="bs-p">
+      الزخرفة تُنسخ، والهيكل يُعاد هندسته. «هيكل» في العربية هو البنية الحاملة للشيء — ما يجعله يعمل —
+      وهو تحديداً ما نقرأه في الرواشين والخيام والسدو والخوص: حلول هندسية سابقة لمناخ صعب.
+      الاسم يقابل الطرح كلمةً بكلمة، والشعار يقابله شكلاً بشكل.
+    </p>
+    <div class="bs-grid2">
+      <div class="bs-card">
+        <span class="bs-card__k">الموقف</span>
+        <p style="color:var(--ink-2);margin:0">لا نبيع التراث كصورة. نقرأه كهندسة، ونعيد بناءه لوظيفة معاصرة.</p>
+      </div>
+      <div class="bs-card">
+        <span class="bs-card__k">الوعد</span>
+        <p style="color:var(--ink-2);margin:0">إن أزلت العنصر من الفراغ، يخسر الفراغ وظيفة — لا زخرفة.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 التكوين -->
+  <section class="bs-sec">
+    <span class="bs-h">02 — Construction</span>
+    <h2>الشعار: مربعان، وأحدهما دار</h2>
+    <p class="bs-p">
+      مربعان متطابقان تماماً — نفس الضلع، نفس المساحة، نفس المادة. أُدير أحدهما ٤٥° فتولدت
+      <b>النجمة الثمانية (الخاتم)</b>، أقدم مفردة في الزخرفة الإسلامية. الشعار ليس رسماً مضافاً إلى الهوية،
+      بل أول عنصر تراثي نعيد هندسته: بقيت الوحدة، وتغيّر القالب.
+    </p>
+
+    <div class="bs-card" style="padding:0;overflow:hidden;margin-top:28px">
+      <svg viewBox="0 0 640 400" style="display:block;width:100%;height:auto"
+           font-family="IBM Plex Mono, monospace" font-size="10" fill="#776B5B">
+        <!-- شبكة إرشاد -->
+        <g stroke="#16130F" stroke-opacity=".1" stroke-width="1">
+          <line x1="40" y1="40" x2="600" y2="40"/><line x1="40" y1="360" x2="600" y2="360"/>
+          <line x1="40" y1="40" x2="40" y2="360"/><line x1="600" y1="40" x2="600" y2="360"/>
+        </g>
+
+        <!-- ١: مربع واحد، ثم المربع المدوّر -->
+        <g>
+          <line x1="150" y1="96" x2="150" y2="304" stroke="#16130F" stroke-opacity=".28" stroke-dasharray="3 4"/>
+          <line x1="56" y1="200" x2="244" y2="200" stroke="#16130F" stroke-opacity=".28" stroke-dasharray="3 4"/>
+          <rect x="90" y="140" width="120" height="120" fill="none" stroke="#16130F" stroke-opacity=".9" stroke-width="1.8"/>
+          <rect x="90" y="140" width="120" height="120" fill="#A4552C" fill-opacity=".07" stroke="#A4552C" stroke-width="1.8"
+                transform="rotate(45 150 200)" stroke-dasharray="6 4"/>
+          <path d="M210 140 A 60 60 0 0 1 234.8 200" fill="none" stroke="#A4552C" stroke-width="1.8"/>
+          <path d="M229 193 L236 200 L228 203" fill="none" stroke="#A4552C" stroke-width="1.8"/>
+          <text x="246" y="166" fill="#A4552C" font-size="11">45°</text>
+          <circle cx="150" cy="200" r="2.6" fill="#16130F" fill-opacity=".7"/>
+          <text x="150" y="296" text-anchor="middle" fill="#776B5B" font-size="9" letter-spacing="1">same side · rotated</text>
+        </g>
+
+        <!-- ٢: الناتج -->
+        <g transform="translate(392 0)">
+          <rect x="0" y="140" width="120" height="120" fill="#A4552C" fill-opacity=".14" stroke="#A4552C" stroke-width="1.8"/>
+          <rect x="0" y="140" width="120" height="120" fill="none" stroke="#16130F" stroke-opacity=".9" stroke-width="1.8"
+                transform="rotate(45 60 200)"/>
+          <g fill="#A4552C">
+            <circle cx="60" cy="115.2" r="2.4"/><circle cx="144.8" cy="200" r="2.4"/>
+            <circle cx="60" cy="284.8" r="2.4"/><circle cx="-24.8" cy="200" r="2.4"/>
+          </g>
+          <text x="60" y="296" text-anchor="middle" fill="#776B5B" font-size="9" letter-spacing="1">eight points · khatam</text>
+        </g>
+
+        <!-- أبعاد -->
+        <g stroke="#16130F" stroke-opacity=".45" stroke-width="1">
+          <line x1="90" y1="322" x2="210" y2="322"/><line x1="90" y1="316" x2="90" y2="328"/>
+          <line x1="210" y1="316" x2="210" y2="328"/>
+        </g>
+        <text x="150" y="312" text-anchor="middle" fill="#776B5B" font-size="9" letter-spacing="1">SIDE ×0.583</text>
+
+        <!-- تسمية الشكلين -->
+        <text x="150" y="356" text-anchor="middle" fill="#16130F" fill-opacity=".7" font-size="10" letter-spacing="2">1 · SQUARE</text>
+        <text x="452" y="356" text-anchor="middle" fill="#16130F" fill-opacity=".7" font-size="10" letter-spacing="2">2 · KHATAM</text>
+
+        <!-- مساحة الحماية -->
+        <rect x="56" y="106" width="188" height="188" fill="none" stroke="#2B3A31" stroke-opacity=".5" stroke-dasharray="2 5"/>
+        <text x="64" y="98" fill="#2B3A31" fill-opacity=".8" font-size="9" letter-spacing="1">clear space = ¼ side</text>
+      </svg>
+    </div>
+
+    <div class="bs-grid2">
+      <div class="bs-card">
+        <span class="bs-card__k">قاعدة التكوين</span>
+        <p style="color:var(--ink-2);margin:0">ضلع المربع = ٠٫٥٨ من شبكة ٤٨. سُمك الخط = ٠٫٠٥ من الشبكة. لا تُغيّر النسبة أبداً.</p>
+      </div>
+      <div class="bs-card">
+        <span class="bs-card__k">الحد الأدنى</span>
+        <p style="color:var(--ink-2);margin:0">١٦ px. تحت ذلك تحوّل إلى أيقونة المربع الممتلئ في ملف <span class="mono" style="color:var(--clay)">favicon.svg</span>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 منظومة الزخرفة -->
+  <section class="bs-sec">
+    <span class="bs-h">03 — Ornament system</span>
+    <h2>ثلاث مفردات، لا زخرفة عشوائية</h2>
+    <p class="bs-p">
+      الزخرفة في هيكل ليست خلفية جمالية: كل مفردة مأخوذة من عنصر معماري أو حرفي سعودي، ولها وظيفة محددة
+      في الصفحة. لا نستخدم أرابيسك حرّاً، ولا نمطاً لا نعرف أصله.
+    </p>
+
+    <div class="motifs">
+      <div class="motif">
+        <div class="motif__tile motif__tile--lat"></div>
+        <div class="motif__body">
+          <span class="motif__k">Mashrabiya</span>
+          <span class="motif__name">الشبكة المشربية</span>
+          <p class="motif__use">خلفيات الأقسام الداكنة والبطاقات. ترمز للترشيح: تسمح بالمرور وتمنع الإغلاق.</p>
+        </div>
+      </div>
+      <div class="motif">
+        <div class="motif__tile motif__tile--frz"></div>
+        <div class="motif__body">
+          <span class="motif__k">Sadu frieze</span>
+          <span class="motif__name">إفريز السدو</span>
+          <p class="motif__use">فواصل الأقسام وحافة الواجهة. المثلث والمعين كما في نسيج السدو، بنسبة ١:٤٫٦.</p>
+        </div>
+      </div>
+      <div class="motif">
+        <div class="motif__tile motif__tile--str"></div>
+        <div class="motif__body">
+          <span class="motif__k">Khatam</span>
+          <span class="motif__name">النجمة الثمانية</span>
+          <p class="motif__use">زوايا البطاقات وعلامات التعداد. أصغر وحدة في المنظومة، وهي أصل الشعار.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 الصيغ -->
+  <section class="bs-sec">
+    <span class="bs-h">04 — Lockups</span>
+    <h2>صيغ الشعار</h2>
+    <p class="bs-p">الأفقي هو الأساس. المكدّس للمساحات الضيقة، والعلامة وحدها للأيقونات والاستخدام أحادي اللون.</p>
+
+    <div class="bs-grid2">
+      <div class="bs-card">
+        <span class="bs-card__k">أفقي — أساسي</span>
+        <div class="bs-lockup">
+          <span class="bs-lockup__mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 3 L45 24 L24 45 L3 24 Z" fill="currentColor" fill-opacity=".16" stroke="currentColor" stroke-width="2.6"/><rect x="10" y="10" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.6"/></svg>
+          </span>
+          <span><span class="bs-lockup__name">هيكل</span><span class="bs-lockup__lat">HAYKAL</span></span>
+        </div>
+      </div>
+
+      <div class="bs-card bs-card--ink">
+        <span class="bs-card__k">أفقي — على الحبر</span>
+        <div class="bs-lockup bs-lockup--ink">
+          <span class="bs-lockup__mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 3 L45 24 L24 45 L3 24 Z" fill="currentColor" fill-opacity=".16" stroke="currentColor" stroke-width="2.6"/><rect x="10" y="10" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.6"/></svg>
+          </span>
+          <span><span class="bs-lockup__name">هيكل</span><span class="bs-lockup__lat">HAYKAL</span></span>
+        </div>
+      </div>
+
+      <div class="bs-card bs-card--ink">
+        <span class="bs-card__k">مكدّس</span>
+        <div class="bs-stack">
+          <span class="bs-lockup__mark" aria-hidden="true" style="color:var(--clay-soft);width:54px">
+            <svg viewBox="0 0 48 48"><path d="M24 3 L45 24 L24 45 L3 24 Z" fill="currentColor" fill-opacity=".16" stroke="currentColor" stroke-width="2.6"/><rect x="10" y="10" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.6"/></svg>
+          </span>
+          <span style="text-align:center">
+            <span class="bs-lockup__name">هيكل</span>
+            <span class="bs-lockup__lat">HAYKAL</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="bs-card">
+        <span class="bs-card__k">العلامة وحدها</span>
+        <div class="bs-lockup" style="gap:26px;align-items:center">
+          <span class="bs-lockup__mark" style="width:70px" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 3 L45 24 L24 45 L3 24 Z" fill="currentColor" fill-opacity=".16" stroke="currentColor" stroke-width="2.6"/><rect x="10" y="10" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.6"/></svg>
+          </span>
+          <span class="bs-lockup__mark" style="width:44px;color:var(--ink)" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 3 L45 24 L24 45 L3 24 Z" fill="currentColor" stroke="currentColor" stroke-width="2.6"/><rect x="10" y="10" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.6"/></svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:clamp(28px,3vw,42px);font-size:17px">اختبار الأحجام</h3>
+    <div class="bs-sizes">
+      <div class="bs-size"><span class="bs-size__mark" style="width:96px;display:block"><svg viewBox="0 0 48 48"><path d="M24 3 L45 24 L24 45 L3 24 Z" fill="currentColor" fill-opacity=".16" stroke="currentColor" stroke-width="2.6"/><rect x="10" y="10" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.6"/></svg></span><span>96</span></div>
+      <div class="bs-size"><span class="bs-size__mark" style="width:56px;display:block"><svg viewBox="0 0 48 48"><path d="M24 3 L45 24 L24 45 L3 24 Z" fill="currentColor" fill-opacity=".16" stroke="currentColor" stroke-width="3"/><rect x="10" y="10" width="28" height="28" fill="none" stroke="currentColor" stroke-width="3"/></svg></span><span>56</span></div>
+      <div class="bs-size"><span class="bs-size__mark" style="width:32px;display:block"><svg viewBox="0 0 48 48"><path d="M24 3 L45 24 L24 45 L3 24 Z" fill="currentColor" fill-opacity=".16" stroke="currentColor" stroke-width="3.6"/><rect x="10" y="10" width="28" height="28" fill="none" stroke="currentColor" stroke-width="3.6"/></svg></span><span>32</span></div>
+      <div class="bs-size"><span class="bs-size__mark" style="width:22px;display:block"><svg viewBox="0 0 48 48"><path d="M24 3 L45 24 L24 45 L3 24 Z" fill="currentColor" fill-opacity=".2" stroke="currentColor" stroke-width="4.6"/><rect x="10" y="10" width="28" height="28" fill="none" stroke="currentColor" stroke-width="4.6"/></svg></span><span>22</span></div>
+      <div class="bs-size"><span class="bs-size__mark" style="width:16px;display:block"><svg viewBox="0 0 48 48"><path d="M24 3 L45 24 L24 45 L3 24 Z" fill="currentColor" fill-opacity=".24" stroke="currentColor" stroke-width="5.4"/><rect x="10" y="10" width="28" height="28" fill="none" stroke="currentColor" stroke-width="5.4"/></svg></span><span>16 · الحد</span></div>
+    </div>
+  </section>
+
+  <!-- 05 اللوحة -->
+  <section class="bs-sec">
+    <span class="bs-h">05 — Palette</span>
+    <h2>اللوحة اللونية</h2>
+    <p class="bs-p">لون واحد مُميِّز: الطين المحروق. البقية حجر وحبر ونخيل. النسب محسوبة على الخلفية الحجرية الأساسية.</p>
+
+    <div class="swatches">
+      <div class="sw"><div class="sw__chip" style="background:#16130F"></div><div class="sw__body"><span class="sw__name">حبر نجدي <span class="sw__hex">#16130F</span></span><p class="sw__use">العناوين، خلفية الواجهة والتذييل.</p><span class="sw__ratio">16.85 : 1 — AAA</span></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#F7F4EC"></div><div class="sw__body"><span class="sw__name">حجر جيري <span class="sw__hex">#F7F4EC</span></span><p class="sw__use">الخلفية الأساسية.</p><span class="sw__ratio">خلفية — 16.85 : 1</span></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#F0EADC"></div><div class="sw__body"><span class="sw__name">رمل <span class="sw__hex">#F0EADC</span></span><p class="sw__use">البطاقات والحقول والأقسام البديلة.</p><span class="sw__ratio">15.44 : 1 على الحبر — AAA</span></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#A4552C"></div><div class="sw__body"><span class="sw__name">طين محروق <span class="sw__hex">#A4552C</span></span><p class="sw__use">العلامة والزخرفة والأرقام والحدود الفعّالة.</p><span class="sw__ratio">4.88 : 1 على الحجر — AA</span></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#C1764C"></div><div class="sw__body"><span class="sw__name">طين فاتح <span class="sw__hex">#C1764C</span></span><p class="sw__use">الطين على الخلفيات الداكنة فقط.</p><span class="sw__ratio">5.26 : 1 على الحبر — AA</span></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#7A3A1B"></div><div class="sw__body"><span class="sw__name">طين غامق <span class="sw__hex">#7A3A1B</span></span><p class="sw__use">التمييز داخل النص وحالات hover.</p><span class="sw__ratio">7.80 : 1 — AAA</span></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#6E6355"></div><div class="sw__body"><span class="sw__name">رمادي دافئ <span class="sw__hex">#6E6355</span></span><p class="sw__use">نص المتن الثانوي.</p><span class="sw__ratio">5.34 : 1 — AA</span></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#776B5B"></div><div class="sw__body"><span class="sw__name">رمادي دافئ ٢ <span class="sw__hex">#776B5B</span></span><p class="sw__use">التسميات الصغيرة والترقيم التقني.</p><span class="sw__ratio">4.73 : 1 — AA</span></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#2B3A31"></div><div class="sw__body"><span class="sw__name">أخضر نخيل <span class="sw__hex">#2B3A31</span></span><p class="sw__use">خطوط الإرشاد وحالات النجاح.</p><span class="sw__ratio">10.90 : 1</span></div></div>
+    </div>
+    <p style="margin-top:20px;font-size:13.5px;color:var(--muted-2)">
+      الطين المحروق على الحبر 3.45 : 1 — جرافيك أو نص كبير فقط، لا نص متن.
+    </p>
+  </section>
+
+  <!-- 06 الخطوط -->
+  <section class="bs-sec">
+    <span class="bs-h">06 — Typography</span>
+    <h2>الخطوط</h2>
+    <p class="bs-p">كوفي هندسي للعناوين، سانس محايد للمتن، نسخ للاقتباسات، ومونو للترقيم التقني.</p>
+
+    <div class="spec">
+      <div class="spec__meta"><b>Noto Kufi Arabic</b>Display · 500 / 700 / 800</div>
+      <div class="spec__sample--display">التراث كما يعمل — هيكل</div>
+    </div>
+    <div class="spec">
+      <div class="spec__meta"><b>Amiri</b>Naskh · quotes · 700</div>
+      <div class="spec__sample--naskh">إن أزلنا العنصر من الفراغ، خسر الفراغ وظيفة — لا زخرفة.</div>
+    </div>
+    <div class="spec">
+      <div class="spec__meta"><b>IBM Plex Sans Arabic</b>Body · 300 / 400 / 500 / 600</div>
+      <div class="spec__sample--body">نقرأ العنصر التراثي كهندسة سابقة: لماذا صُنع، وكيف يعمل، ومن أي مادة. ثم نجرّده من قالبه ونعيد صياغته ليؤدي وظيفة جديدة داخل الفراغ المعاصر.</div>
+    </div>
+    <div class="spec">
+      <div class="spec__meta"><b>IBM Plex Mono</b>Labels · 400 / 500</div>
+      <div class="spec__sample--mono">SEC. 01 · RAWASHIN 1:20 · 45° · 0123456789</div>
+    </div>
+  </section>
+
+  <!-- 07 القواعد -->
+  <section class="bs-sec">
+    <span class="bs-h">07 — Usage</span>
+    <h2>قواعد الاستخدام</h2>
+    <div class="rules">
+      <ul class="rules__list rules--yes">
+        <li class="rules__h">افعل</li>
+        <li>استخدم مساحة حماية تساوي ربع ضلع المربع حول العلامة.</li>
+        <li>الزخرفة أحادية اللون دائماً، وبشفافية لا تتجاوز ١٨٪ في الخلفيات.</li>
+        <li>على الخلفيات الداكنة استخدم الطين الفاتح <span class="mono">#C1764C</span> أو الرمل.</li>
+        <li>استخدم الإفريز كفاصل بين الأقسام فقط، لا داخل البطاقة.</li>
+      </ul>
+      <ul class="rules__list rules--no">
+        <li class="rules__h">لا تفعل</li>
+        <li>لا تُدوّر العلامة أو تفصل مربعيها — الدوران هو المعنى.</li>
+        <li>لا تُضف أرابيسك أو زخرفة لا تعرف أصلها ووظيفتها.</li>
+        <li>لا تضع نصاً صغيراً فوق الشبكة المشربية دون تفتيح الموضع.</li>
+        <li>لا تُلوّن الزخرفة بأكثر من لون واحد في الشاشة نفسها.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="bs-foot">
+    <span>HAYKAL — BRAND SHEET · NEXUS IDEATHON</span>
+    <a href="index.html">index.html →</a>
+  </div>
+</div>
+
+</body>
+</html>
